@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-labelledby="t d">
+  <title id="t">SDTP</title>
+  <desc id="d">SDTP: Sequential Document Transfer Protocol. Neon letters with a glitch on a dark perspective grid.</desc>
+  <defs>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff2bd6"/>
+      <stop offset="0.55" stop-color="#b14bff"/>
+      <stop offset="1" stop-color="#18e7ff"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07030f"/>
+      <stop offset="0.62" stop-color="#1a0630"/>
+      <stop offset="1" stop-color="#05020a"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff2bd6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ff2bd6" stop-opacity="0.9"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity="0.35"/>
+    </pattern>
+    <pattern id="hazard" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="11" height="22" fill="#ffe14d"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="band1"><rect x="0" y="88" width="960" height="9"/></clipPath>
+    <clipPath id="band2"><rect x="0" y="150" width="960" height="6"/></clipPath>
+  </defs>
+
+  <rect width="960" height="300" fill="url(#sky)"/>
+  <circle cx="480.0" cy="196" r="120" fill="#ff2bd6" opacity="0.10"/>
+  <g stroke="url(#fade)" stroke-width="1.4" fill="none">
+      <line x1="480.0" y1="196" x2="-600.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="-480.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="-360.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="-240.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="-120.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="0.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="120.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="240.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="360.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="480.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="600.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="720.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="840.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="960.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="1080.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="1200.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="1320.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="1440.0" y2="300"/>
+      <line x1="480.0" y1="196" x2="1560.0" y2="300"/>
+      <line x1="0" y1="206" x2="960" y2="206" opacity="0.35"/>
+      <line x1="0" y1="220" x2="960" y2="220" opacity="0.47"/>
+      <line x1="0" y1="240" x2="960" y2="240" opacity="0.59"/>
+      <line x1="0" y1="266" x2="960" y2="266" opacity="0.71"/>
+      <line x1="0" y1="300" x2="960" y2="300" opacity="0.83"/>
+  </g>
+  <rect x="0" y="194" width="960" height="3" fill="#ff2bd6" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- frame: brackets and hazard tape -->
+  <g fill="none" stroke="#18e7ff" stroke-width="3" opacity="0.9">
+    <path d="M24 70V24H70"/><path d="M890 24H936V70"/>
+    <path d="M24 204V250H70" stroke="#ff2bd6"/><path d="M890 250H936V204" stroke="#ff2bd6"/>
+  </g>
+  <rect x="710" y="14" width="160" height="10" fill="url(#hazard)" opacity="0.85"/>
+  <text x="870" y="46" text-anchor="end" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="13" fill="#ffe14d" letter-spacing="2">v1 // CLEAR</text>
+  <text x="34" y="48" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="12" fill="#18e7ff" opacity="0.8" letter-spacing="3">/// MAILBOX // SEQUENCE // TAKE-ONCE</text>
+
+    <!-- glitch: offset ghosts in cyan and magenta, then the neon letters -->
+    <g fill="#18e7ff" opacity="0.75" transform="translate(-5 2)">
+      <path transform="translate(256.8 58) scale(1.55)" d="M10 0H60V14H14V33H50L60 43V70L50 80H0V66H46V47H10L0 37V10Z" fill-rule="evenodd"/>
+      <path transform="translate(374.6 58) scale(1.55)" d="M0 0H44L60 16V64L44 80H0Z M14 14V66H38L46 58V22L38 14Z" fill-rule="evenodd"/>
+      <path transform="translate(492.4 58) scale(1.55)" d="M0 0H60V14H37V80H23V14H0Z" fill-rule="evenodd"/>
+      <path transform="translate(610.2 58) scale(1.55)" d="M0 0H48L60 12V38L48 50H14V80H0Z M14 14V36H42L46 32V18L42 14Z" fill-rule="evenodd"/>
+    </g>
+    <g fill="#ff2bd6" opacity="0.75" transform="translate(5 -2)">
+      <path transform="translate(256.8 58) scale(1.55)" d="M10 0H60V14H14V33H50L60 43V70L50 80H0V66H46V47H10L0 37V10Z" fill-rule="evenodd"/>
+      <path transform="translate(374.6 58) scale(1.55)" d="M0 0H44L60 16V64L44 80H0Z M14 14V66H38L46 58V22L38 14Z" fill-rule="evenodd"/>
+      <path transform="translate(492.4 58) scale(1.55)" d="M0 0H60V14H37V80H23V14H0Z" fill-rule="evenodd"/>
+      <path transform="translate(610.2 58) scale(1.55)" d="M0 0H48L60 12V38L48 50H14V80H0Z M14 14V36H42L46 32V18L42 14Z" fill-rule="evenodd"/>
+    </g>
+    <g fill="url(#neon)" filter="url(#glow)">
+      <path transform="translate(256.8 58) scale(1.55)" d="M10 0H60V14H14V33H50L60 43V70L50 80H0V66H46V47H10L0 37V10Z" fill-rule="evenodd"/>
+      <path transform="translate(374.6 58) scale(1.55)" d="M0 0H44L60 16V64L44 80H0Z M14 14V66H38L46 58V22L38 14Z" fill-rule="evenodd"/>
+      <path transform="translate(492.4 58) scale(1.55)" d="M0 0H60V14H37V80H23V14H0Z" fill-rule="evenodd"/>
+      <path transform="translate(610.2 58) scale(1.55)" d="M0 0H48L60 12V38L48 50H14V80H0Z M14 14V36H42L46 32V18L42 14Z" fill-rule="evenodd"/>
+    </g>
+    <g fill="#f4f1ff" clip-path="url(#band1)" transform="translate(14 0)">
+      <path transform="translate(256.8 58) scale(1.55)" d="M10 0H60V14H14V33H50L60 43V70L50 80H0V66H46V47H10L0 37V10Z" fill-rule="evenodd"/>
+      <path transform="translate(374.6 58) scale(1.55)" d="M0 0H44L60 16V64L44 80H0Z M14 14V66H38L46 58V22L38 14Z" fill-rule="evenodd"/>
+      <path transform="translate(492.4 58) scale(1.55)" d="M0 0H60V14H37V80H23V14H0Z" fill-rule="evenodd"/>
+      <path transform="translate(610.2 58) scale(1.55)" d="M0 0H48L60 12V38L48 50H14V80H0Z M14 14V36H42L46 32V18L42 14Z" fill-rule="evenodd"/>
+    </g>
+    <g fill="#18e7ff" clip-path="url(#band2)" transform="translate(-18 0)">
+      <path transform="translate(256.8 58) scale(1.55)" d="M10 0H60V14H14V33H50L60 43V70L50 80H0V66H46V47H10L0 37V10Z" fill-rule="evenodd"/>
+      <path transform="translate(374.6 58) scale(1.55)" d="M0 0H44L60 16V64L44 80H0Z M14 14V66H38L46 58V22L38 14Z" fill-rule="evenodd"/>
+      <path transform="translate(492.4 58) scale(1.55)" d="M0 0H60V14H37V80H23V14H0Z" fill-rule="evenodd"/>
+      <path transform="translate(610.2 58) scale(1.55)" d="M0 0H48L60 12V38L48 50H14V80H0Z M14 14V36H42L46 32V18L42 14Z" fill-rule="evenodd"/>
+    </g>
+
+  <text x="480.0" y="278" text-anchor="middle" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="15" fill="#f4f1ff" letter-spacing="5" opacity="0.92">SEQUENTIAL DOCUMENT TRANSFER PROTOCOL</text>
+  <rect width="960" height="300" fill="url(#scan)"/>
+</svg>
