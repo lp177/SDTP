@@ -95,6 +95,10 @@ JSON is RFC 8259 JSON in UTF-8. All times on the wire are UTC.
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -278,6 +282,10 @@ X-Mmbox-Id: m3kx9w2q7r4tb
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -382,6 +390,10 @@ Several readers of one mailbox are normal: two listener processes after a restar
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -437,6 +449,10 @@ The order "local log, then hand over, then `done`" matters. A crash before the l
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -459,12 +475,12 @@ stateDiagram-v2
   [*] --> waiting: send
   waiting --> taken: take (one winner)
   taken --> consumed: done
-  taken --> waiting: release (taker could not use it)
-  taken --> recovered: taker silent > LEASE (120 s)<br/>recover (one winner)
-  recovered --> consumed: done (archived, never handed over)
+  taken --> waiting: release<br/>(taker could not use it)
+  taken --> recovered: taker silent<br/>> LEASE (120 s):<br/>recover (one winner)
+  recovered --> consumed: done (archived,<br/>never handed over)
   waiting --> backlog: age > EXPIRE (24 h)
   backlog --> consumed: user processes or purges
-  waiting --> [*]: age > KEEP (8 days), cut by the server
+  waiting --> [*]: age > KEEP (8 days),<br/>cut by the server
   consumed --> [*]
 ```
 
@@ -499,6 +515,10 @@ A mailbox MAY be registered on several servers: its owner's team server and a se
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -560,6 +580,10 @@ When a session opens its mailbox, its implementation sends an **`introduce`** do
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -616,6 +640,10 @@ A session whose agent process is still running but whose listener is silent keep
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
@@ -635,12 +663,12 @@ config:
   }
 ---
 stateDiagram-v2
-  [*] --> open: session starts (box/open, introduce)
-  open --> open: any request, listener alive
-  open --> closed: no listener and no agent process<br/>for SESSION_IDLE (60 min)
-  closed --> open: the session comes back (re-introduced)
-  closed --> removed: SESSION_KEEP (7 days) after closing
+  [*] --> open: session starts<br/>(box/open, introduce)
+  open --> closed: no listener,<br/>no agent process<br/>for SESSION_IDLE<br/>(60 min)
+  closed --> open: the session comes back<br/>(re-introduced)
+  closed --> removed: SESSION_KEEP (7 days)<br/>after closing
   removed --> [*]
+  note right of open: any request keeps it open<br/>while its listener is alive
 ```
 
 - **Closing**: the mailbox is marked closed (`box/close`). Its remote peers receive a **`retire`** saying "write to my machine mailbox". From then on, the relay round forwards anything that still reaches it to the machine mailbox at once, without a ping.
@@ -666,6 +694,10 @@ Each machine mailbox has a **channel**: an ordered stream of **posts**. A post:
 ---
 config:
   theme: base
+  htmlLabels: false
+  flowchart: { htmlLabels: false, wrappingWidth: 1000 }
+  class: { htmlLabels: false }
+  state: { htmlLabels: false }
   themeVariables: {
     darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
     primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
