@@ -92,6 +92,27 @@ JSON is RFC 8259 JSON in UTF-8. All times on the wire are UTC.
 ## 3. Architecture
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 flowchart LR
   subgraph laptop["Computer: laptop"]
     direction TB
@@ -113,7 +134,7 @@ flowchart LR
   M1 <--> R
   B3 <--> R
   M2 <--> R
-  classDef s fill:#eef,stroke:#88a;
+  classDef s fill:#1c2d40,stroke:#58a6ff,color:#e6edf3;
 ```
 
 - The **relay server** is the only shared component. It stores mailboxes (ordered sequences of entries) and channels (short-lived sequences of posts). It never interprets documents beyond the fields it needs to route them.
@@ -254,6 +275,27 @@ X-Mmbox-Id: m3kx9w2q7r4tb
 ### 6.2 Data model
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 classDiagram
   class Mailbox {
     id : MailboxID
@@ -337,6 +379,27 @@ Several readers of one mailbox are normal: two listener processes after a restar
 ### 7.2 The exchange
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 sequenceDiagram
   autonumber
   participant A as Sender (alice-laptop)
@@ -371,6 +434,27 @@ The order "local log, then hand over, then `done`" matters. A crash before the l
 ### 7.3 Readers that die
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 stateDiagram-v2
   [*] --> waiting: send
   waiting --> taken: take (one winner)
@@ -412,6 +496,27 @@ A mailbox MAY be registered on several servers: its owner's team server and a se
 - If that server fails, the sender tries the next. A document may thus end up on two servers. The reader that meets a Document ID already in its `seen` list takes the copy and deletes it at once, without handing it over: the duplicate is dropped.
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 sequenceDiagram
   participant A as alice-laptop
   participant B as bob-workstation
@@ -452,6 +557,27 @@ When a session opens its mailbox, its implementation sends an **`introduce`** do
 ### 9.4 The relay round: ping, then forward
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 sequenceDiagram
   autonumber
   participant P as Remote peer
@@ -487,6 +613,27 @@ A session whose agent process is still running but whose listener is silent keep
 ### 9.5 Life of a session mailbox
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 stateDiagram-v2
   [*] --> open: session starts (box/open, introduce)
   open --> open: any request, listener alive
@@ -516,6 +663,27 @@ Each machine mailbox has a **channel**: an ordered stream of **posts**. A post:
 | `network` (`@all`) | that channel, plus the channel of every machine the poster knows | every session of every known computer |
 
 ```mermaid
+---
+config:
+  theme: base
+  themeVariables: {
+    darkMode: true, background: "#0d1117", textColor: "#e6edf3", titleColor: "#e6edf3", lineColor: "#8b949e",
+    primaryColor: "#21262d", primaryTextColor: "#e6edf3", primaryBorderColor: "#6e7681",
+    secondaryColor: "#2d333b", secondaryTextColor: "#e6edf3", secondaryBorderColor: "#6e7681",
+    tertiaryColor: "#161b22", tertiaryTextColor: "#e6edf3", tertiaryBorderColor: "#484f58",
+    mainBkg: "#21262d", nodeBorder: "#6e7681", nodeTextColor: "#e6edf3",
+    clusterBkg: "#161b22", clusterBorder: "#484f58", edgeLabelBackground: "#2d333b",
+    noteBkgColor: "#2d333b", noteTextColor: "#e6edf3", noteBorderColor: "#768390",
+    actorBkg: "#21262d", actorBorder: "#6e7681", actorTextColor: "#e6edf3", actorLineColor: "#6e7681",
+    signalColor: "#c9d1d9", signalTextColor: "#e6edf3", sequenceNumberColor: "#0d1117",
+    labelBoxBkgColor: "#2d333b", labelBoxBorderColor: "#6e7681", labelTextColor: "#e6edf3", loopTextColor: "#e6edf3",
+    activationBkgColor: "#2d333b", activationBorderColor: "#8b949e",
+    stateBkg: "#21262d", stateLabelColor: "#e6edf3", compositeBackground: "#161b22", altBackground: "#161b22",
+    transitionColor: "#8b949e", transitionLabelColor: "#e6edf3", specialStateColor: "#c9d1d9",
+    innerEndBackground: "#c9d1d9", labelColor: "#e6edf3",
+    classText: "#e6edf3", relationColor: "#8b949e", relationLabelBackground: "#2d333b", relationLabelColor: "#e6edf3"
+  }
+---
 flowchart LR
   P["session db-migration<br/>posts @all: 'staging DB restarts at 14:00'"] -->|chan/post x3| R{{relay server}}
   R --> C1[("channel of laptop")]
