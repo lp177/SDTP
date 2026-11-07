@@ -24,3 +24,7 @@ Every SDTPS implementation is an SDTP implementation with the security layer add
 ## Status
 
 Informational draft, version 1, describing a protocol in production use between AI agent sessions. Issues and independent implementations are welcome.
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE).
